@@ -204,14 +204,16 @@ public class DcSlotServiceImpl implements DcSlotService {
     }
 
     @Override
-    public DcSlot searchByDCTimeSlot(String dcSlotId) {
-          if (dcSlotdao.findBydcTimeSlot(dcSlotId) != null){
+    public DcSlot searchByDCTimeSlot(String dcSlotId, Long distributionCenter) {
+        DistributionCenter distributionCenter1 = this.findBydcNumber(distributionCenter);
+          if (dcSlotdao.findByDcTimeSlotAndDistributionCenter(dcSlotId,distributionCenter1) != null){
 
-           return dcSlotdao.findBydcTimeSlot(dcSlotId );
+           return dcSlotdao.findByDcTimeSlotAndDistributionCenter(dcSlotId,distributionCenter1 );
           }
 
         return null;
     }
+
 
     @HystrixCommand(fallbackMethod = "difaultfindbydcnuber")
     private DistributionCenter findBydcNumber(Long dcNumber){

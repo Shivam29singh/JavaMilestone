@@ -5,6 +5,7 @@ import com.dc.truckdcslotsystem.model.DistributionCenter;
 import javax.persistence.*;
 
 @Entity
+
 public class DcSlot {
 
     @Id

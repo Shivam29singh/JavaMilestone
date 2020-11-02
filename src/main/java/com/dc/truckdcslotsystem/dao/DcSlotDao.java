@@ -12,7 +12,7 @@ public interface DcSlotDao extends JpaRepository<DcSlot, Integer> {
 
     List<DcSlot> findByDistributionCenter(DistributionCenter distributionCenter);
 
-    DcSlot findBydcTimeSlot(String dcTimeSlot);
+    DcSlot findByDcTimeSlotAndDistributionCenter(String dcTimeSlot, DistributionCenter distributionCenter);
 
     DcSlot findByDcSlotId(Integer id);
 

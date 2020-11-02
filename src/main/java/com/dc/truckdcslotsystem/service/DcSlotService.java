@@ -1,6 +1,7 @@
 package com.dc.truckdcslotsystem.service;
 
 import com.dc.truckdcslotsystem.model.DcSlot;
+import com.dc.truckdcslotsystem.model.DistributionCenter;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface DcSlotService {
 
     boolean deleteDcSlot(Integer dcSlot );
 
-    DcSlot searchByDCTimeSlot( String dcSlotId);
+    DcSlot searchByDCTimeSlot(String dcSlotId, Long distributionCenter);
 
 
 }

@@ -59,13 +59,13 @@ public class DcSlotController {
         return   ResponseEntity.status(HttpStatus.OK).body("ADDED");
     }
 
-    @GetMapping("search/dcTimeSlot/{dctimeTimeSlot}")
-    public  DcSlot searchDCTimeSlot(@PathVariable String dctimeTimeSlot ){
+    @GetMapping("search/dcTimeSlot/{dctimeTimeSlot}/{dcNumber}")
+    public  DcSlot searchDCTimeSlot(@PathVariable String dctimeTimeSlot, @PathVariable Long dcNumber ){
         System.out.println(dctimeTimeSlot);
-        System.out.println("dsfkjasdbfsdkbfsfg" +dcSlotService.searchByDCTimeSlot(dctimeTimeSlot));
-       if (dcSlotService.searchByDCTimeSlot(dctimeTimeSlot) != null){
+        System.out.println("dsfkjasdbfsdkbfsfg" +dcSlotService.searchByDCTimeSlot(dctimeTimeSlot,dcNumber));
+       if (dcSlotService.searchByDCTimeSlot(dctimeTimeSlot,dcNumber) != null){
 
-             return dcSlotService.searchByDCTimeSlot(dctimeTimeSlot) ;
+             return dcSlotService.searchByDCTimeSlot(dctimeTimeSlot,dcNumber) ;
        }
         return  null;
 
